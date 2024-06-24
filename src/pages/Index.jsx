@@ -1,4 +1,4 @@
-import { Box, Flex, Link, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, Link, Text, VStack, Container } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
