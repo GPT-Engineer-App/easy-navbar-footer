@@ -1,19 +1,40 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, Link, Text, VStack } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+const Navbar = () => {
+  return (
+    <Box bg="brand.700" px={4} py={2} color="white" width="100%">
+      <Flex h={16} alignItems="center" justifyContent="space-between">
+        <Box>
+          <Text fontSize="xl" fontWeight="bold">MyWebsite</Text>
+        </Box>
+        <Flex alignItems="center">
+          <RouterLink to="/">
+            <Link px={2} py={1} rounded="md" _hover={{ textDecoration: "none", bg: "brand.800" }}>Home</Link>
+          </RouterLink>
+          <RouterLink to="/about">
+            <Link px={2} py={1} rounded="md" _hover={{ textDecoration: "none", bg: "brand.800" }}>About</Link>
+          </RouterLink>
+          <RouterLink to="/contact">
+            <Link px={2} py={1} rounded="md" _hover={{ textDecoration: "none", bg: "brand.800" }}>Contact</Link>
+          </RouterLink>
+        </Flex>
+      </Flex>
+    </Box>
+  );
+};
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
-      </VStack>
-    </Container>
+    <Box>
+      <Navbar />
+      <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+        <VStack spacing={4}>
+          <Text fontSize="2xl">Your Blank Canvas</Text>
+          <Text>Chat with the agent to start making edits.</Text>
+        </VStack>
+      </Container>
+    </Box>
   );
 };
 
